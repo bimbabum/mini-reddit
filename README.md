@@ -7,7 +7,7 @@ This app's intention is to create a simplified version of reddit by using [Reddi
 
 *This project is  bootstrapped with Create React App*
 
-React, Redux, Material UI
+React, Redux
 React testing library, Jest & Enzyme for Testing
 
 ## FEATURES
