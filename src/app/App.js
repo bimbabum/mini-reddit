@@ -1,14 +1,24 @@
-
 import './App.css';
+import Header from '../components/Header';
+import Main from '../components/Main';
+import Sidebar from '../components/Sidebar';
 
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-
-      </header>
-    </div>
+    <>
+        <header>
+            <Header/>
+        </header>
+        <div className='main-and-aside'>
+            <main>
+              <Main/>
+            </main>
+            <aside>
+              <Sidebar/>
+            </aside>
+      </div>
+    </>
   );
 }
 
