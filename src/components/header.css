@@ -1,0 +1,12 @@
+#reddit-logo {
+    flex-grow: 1;
+    padding: 6px 20px;
+    display: flex;
+    align-items: center;    
+}
+
+.mini-reddit {
+    margin-left: 1rem;
+    color: red;
+    font-weight: bold;
+}
