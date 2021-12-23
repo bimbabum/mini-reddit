@@ -1,7 +1,13 @@
 import { capitalizeFirstLetter } from "../../utilities/utilities"
-export default function SubReddit({subReddit}){
+
+export default function SubReddit({id, name, handleOnClick}){ 
     return (
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
-        <li><a href='#'>{capitalizeFirstLetter(subReddit)}</a></li>
+        <a 
+            href='#' 
+            onClick={()=> handleOnClick(id)}
+        >
+            {capitalizeFirstLetter(name)}
+        </a>
     )
 }

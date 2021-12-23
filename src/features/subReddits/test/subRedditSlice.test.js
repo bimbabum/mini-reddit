@@ -27,7 +27,6 @@ test('returns initial state',()=>{
             { id: 20, name: 'apple', icon: 'hyperlink' },
         ]
     }
-
     expect(state).toEqual(expectedState)
 })
 

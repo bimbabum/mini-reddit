@@ -3,7 +3,8 @@ import {screen,render} from '@testing-library/react'
 
 describe('render',()=>{
     test('renders subreddit through props',()=>{
-        render(<SubReddit subReddit='Popular'/>)
+        const props = { id: 1, name: 'Popular', handleOnClick: null}
+        render(<SubReddit {...props}/>)
         const subReddit = screen.getByText(/popular/i)
         expect(subReddit).toBeInTheDocument()
     })

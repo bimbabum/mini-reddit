@@ -1,4 +1,9 @@
+import SubReddits from '../features/subReddits/SubReddits.js'
 
 export default function Sidebar(){
-    return <div>Sidebar</div>
+    return (
+        <>
+            <SubReddits/>
+        </>
+    )
 }

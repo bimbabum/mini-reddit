@@ -36,3 +36,5 @@ const subRedditsSlice = createSlice({
 
 export const {setActiveSub} = subRedditsSlice.actions
 export default subRedditsSlice.reducer
+
+export const selectSubReddits = (state) => state.subReddits.subReddits
