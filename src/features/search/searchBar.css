@@ -24,3 +24,7 @@ form {
     color: lightgrey;
 }
 
+#search:focus{
+    border: solid 1px red;
+}
+

@@ -1,5 +1,5 @@
-import SearchBar from "./search/SearchBar";
-import {render, screen} from '@testing-library/react'
+import SearchBar from "./SearchBar";
+import {render, screen} from '../../test-utils/testing-library-utils'
 
 test('render search icon and search input',()=>{
     render(<SearchBar/>)
