@@ -18,4 +18,4 @@ export * from '@testing-library/react'
 //overide render method
 export {renderWithProvider as render}
 
-//for detail insutrction: https://testing-library.com/docs/react-testing-library/setup/
+//for detail instruction: https://testing-library.com/docs/react-testing-library/setup/
