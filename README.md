@@ -9,7 +9,7 @@ This app's intention is to create a simplified version of reddit by using [Reddi
 
 React, Redux
 Styling: basic CSS
-React testing library, Jest & Enzyme for Testing
+React testing library, Jest, msw (async mocking) for Testing
 
 ## FEATURES
 
