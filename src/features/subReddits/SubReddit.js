@@ -5,7 +5,7 @@ export default function SubReddit({id, name, handleOnClick}){
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
         <a 
             href='#' 
-            onClick={()=> handleOnClick(id)}
+            onClick={()=> handleOnClick(name)}
         >
             {capitalizeFirstLetter(name)}
         </a>

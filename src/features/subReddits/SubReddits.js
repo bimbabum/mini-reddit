@@ -1,13 +1,14 @@
 import SubReddit from "./SubReddit";
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch} from "react-redux";
 import { setActiveSub } from "./subRedditsSlice"
+import { loadPosts } from "../posts/PostsSlice";
 
 export default function SubReddits(){
     const subs = useSelector(state => state.subReddits.subReddits)
     const dispatch = useDispatch()
 
-    const handleOnClick = (id) => dispatch(setActiveSub(id))
+    const handleOnClick = (name) => dispatch(setActiveSub(name))
     return (
         <>
             <h2>Sub Reddits</h2>

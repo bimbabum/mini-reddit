@@ -3,7 +3,7 @@ import subRedditsReducer, {setActiveSub} from '../subRedditsSlice'
 test('returns initial state',()=>{
     const state = subRedditsReducer(undefined, {})
     const expectedState = {
-        activeSubReddit: {id: 1},
+        activeSubReddit: {name: 'Popular'},
         subReddits: [
             {id:1, name: 'Popular', icon: 'hyperlink'},
             {id: 2, name: 'AskReddit', icon: 'hyperlink'},
@@ -32,7 +32,7 @@ test('returns initial state',()=>{
 
 test('handles setActiceSub to return new activeSubReddit',()=>{
     const previousState = {}
-    const newState = subRedditsReducer(previousState,setActiveSub(2))
+    const newState = subRedditsReducer(previousState,setActiveSub('AskReddit'))
 
-    expect(newState.activeSubReddit).toEqual({id: 2})
+    expect(newState.activeSubReddit).toEqual({name: 'AskReddit'})
 })

@@ -1,13 +1,13 @@
+import  './Post.css'
 
-
-export default function Post(props){
-    const {title, author, ups, numComments, img, link} = props
+export default function Post({post}){
     return (
-        <div className='post'>
-            <h2>{props.title}</h2>
-            <img src={img} alt={title}/>
-            <p>By @{author}</p>
-            <span>{ups} votes </span> <span>{numComments} comments</span>
+        <div className='post' key={post.ups}>
+            <h2>{post.title}</h2>
+            <img src={post.url_overridden_by_dest} alt={post.title}/>
+            <p>By @{post.author}</p>
+            <span>{post.ups} votes </span> <span>{post.num_comments} comments</span>
+            <p>Checking</p>
         </div>
     )
 }

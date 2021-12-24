@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { loadPosts } from "../posts/PostsSlice";
 
 const subRedditsSlice = createSlice({
     name: 'subReddits',
     initialState: {
-        activeSubReddit: { id: 1 },
+        activeSubReddit: { name: 'Popular' },
         subReddits: [
             { id: 1, name: 'Popular', icon: 'hyperlink' },
             { id: 2, name: 'AskReddit', icon: 'hyperlink' },
@@ -29,7 +30,7 @@ const subRedditsSlice = createSlice({
     },
     reducers: {
         setActiveSub: (state,action) =>{
-            state.activeSubReddit = {id: action.payload}
+            state.activeSubReddit = {name: action.payload}
         }
     }
 })
