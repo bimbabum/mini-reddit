@@ -1,5 +1,5 @@
 import  './Post.css'
-import ReactMarkDown from 'react-markdown'
+import MarkDown from 'markdown-to-jsx'
 
 export default function Post({post}){
     let media
@@ -8,7 +8,7 @@ export default function Post({post}){
         if (postHint === 'image') {
             media = <img src={post.url_overridden_by_dest} alt='' /> 
         } else if (postHint === 'self') {
-            media = <ReactMarkDown className='postSelfText'>{post.selftext}</ReactMarkDown>
+            media = <MarkDown className='postSelfText'>{post.selftext}</MarkDown>
         } else if (postHint === 'hosted:video') {
             media = <video controls autoPlay muted className='postVideo'><source src={post.media.reddit_video.fallback_url} type='video/mp4'/></video>
         } else if (postHint === 'rich:video') {
@@ -17,7 +17,7 @@ export default function Post({post}){
             media = <a href={post.url} target='_blank' rel="noreferrer"><img src={post.thumbnail} alt=''/></a>
         }
     } else if (post.selftext) {
-        media = <ReactMarkDown className='postSelfText'>{post.selftext}</ReactMarkDown>
+        media = <MarkDown className='postSelfText'>{post.selftext}</MarkDown>
     }
 
     return (
