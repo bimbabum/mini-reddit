@@ -1,27 +1,26 @@
 header {
-    border: 1px solid red;
+    
     width: 100%;
     height: 4rem;
     display: flex;
     margin-bottom: 1.5rem;
+    background-color: white;
 }
 
 .main-and-aside { 
     display: grid;
     margin: auto;
     grid-template-columns: repeat(3,1fr);
-    grid-gap: 1rem;
-    max-width: 1000px
+    grid-gap: 1.5rem;
+    max-width: 1000px;
 }
 
 main {
     grid-area: 1/span 2;
-    border: 1px solid black;
 }
 
 aside {
     grid-area: span 1;
-    border: 1px solid black;
 }
 
 @media only screen and (max-width: 650px) {
@@ -30,5 +29,9 @@ aside {
     }
     aside {
         display: none
+    }
+
+    .mini-reddit {
+        display: none;
     }
 }

@@ -21,13 +21,15 @@ export default function Post({post}){
     }
 
     return (
-        <div className='post' >
+        <div className='postContainer'>
             <h2>{post.title}</h2>
+            <div className='post'>
             <div className='media'>{media}</div>
             {post.post_hint? <p style={{color: 'red'}}>Post hint: {post.post_hint}</p> : null}
             {post.media_metadata? <p>Media metadata</p>: null}
             <p>By @{post.author}</p>
             <span>{post.ups} votes </span> <span>{post.num_comments} comments</span>
+            </div>
         </div>
     )
 }

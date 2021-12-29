@@ -10,6 +10,17 @@ export const loadPosts = createAsyncThunk(
     }
 )
 
+export const loadSearchResults = createAsyncThunk(
+    'posts/loadSearchResults',
+    async(searchTerm) => {
+        const searchParams = searchTerm.split(' ').join('%20')
+        const response = await fetch(`https://www.reddit.com/search.json?q=${searchParams}`)
+        const json = await response.json()
+        const posts = json.data.children.map(postdata => postdata.data)
+        return posts
+    }
+)
+
 const postsSlice = createSlice({
     name: 'posts',
     initialState: {
@@ -30,7 +41,21 @@ const postsSlice = createSlice({
         [loadPosts.rejected]: (state,action) => {
             state.isLoading = false
             state.isError = true
-        }
+        },
+
+        [loadSearchResults.pending]: (state, action) => {
+            state.isLoading = true
+            state.isError = false
+        },
+        [loadSearchResults.fulfilled]: (state, action) => {
+            state.isLoading = false
+            state.isError = false
+            state.posts = action.payload
+        },
+        [loadSearchResults.rejected]: (state, action) => {
+            state.isLoading = false
+            state.isError = true
+        },
     }
 })
 

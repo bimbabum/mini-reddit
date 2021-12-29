@@ -58,5 +58,23 @@ export const handlers = [
             }
         }
         ))
+    }),
+
+    rest.get(`https://www.reddit.com/search.json:q`,(req,res,ctx)=>{
+        return res(ctx.json({
+            data: {
+                children: {
+                    data: {
+                        title: "Best customer to date! She let me pick out whatever halloween candy I wanted …",
+                        author: 'kateeee182',
+                        ups: 78,
+                        num_comments: 20,
+                        img: 'link here',
+                        link: 'link here',
+                    }
+                }
+            }
+        }))
+        
     })
 ]

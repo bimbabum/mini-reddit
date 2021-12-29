@@ -2,7 +2,7 @@ import SubReddit from "./SubReddit";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch} from "react-redux";
 import { setActiveSub } from "./subRedditsSlice"
-import { loadPosts } from "../posts/PostsSlice";
+import './subReddit.css'
 
 export default function SubReddits(){
     const subs = useSelector(state => state.subReddits.subReddits)
@@ -10,7 +10,7 @@ export default function SubReddits(){
 
     const handleOnClick = (name) => dispatch(setActiveSub(name))
     return (
-        <>
+        <div className='subreddits'>
             <h2>Sub Reddits</h2>
             <ul>
                 {subs.map(sub => (
@@ -21,6 +21,6 @@ export default function SubReddits(){
                             handleOnClick={handleOnClick}/>
                     </li>))}
             </ul>
-        </>
+        </div>
     )
 }
