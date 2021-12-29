@@ -13,7 +13,7 @@ form {
 #search {
     border-radius: 5px;
     padding: 9px 25px 9px 40px;
-    border: solid 1px #141c3a;
+    border: solid 1px rgb(194, 168, 172);
     background-color: #ffffff;
     outline: none;
     width: 100%;
@@ -21,7 +21,7 @@ form {
 
 #search::placeholder{
     font-weight: bold;
-    color: lightgrey;
+    color: rgb(219, 203, 206)
 }
 
 #search:focus{
