@@ -10,10 +10,11 @@ export default function SearchBar(){
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        dispatch(loadSearchResults(term))
-        dispatch(setSearchTerm(term))
+        // dispatch(loadSearchResults(term))
+        // dispatch(setSearchTerm(term))
     }
     return (
+        // eslint-disable-next-line jsx-a11y/no-redundant-roles
         <form id='searchBar' role='form' onSubmit={(e)=>handleSubmit(e)}>
             <img src='./img/search_icon.svg' alt='search icon' id='search-icon'/>
             <input
