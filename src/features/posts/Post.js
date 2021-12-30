@@ -1,6 +1,6 @@
 import  './Post.css'
 import MarkDown from 'markdown-to-jsx'
-import { roundNumber } from '../../utilities/utilities'
+import { roundNumber, timeAgo } from '../../utilities/utilities'
 
 export default function Post({post}){
     let media
@@ -31,6 +31,7 @@ export default function Post({post}){
             <div className='post-header'>
                 <span style={{fontWeight: 'bold'}}>{post.subreddit_name_prefixed}</span>
                 <span>Posted by u/{post.author}</span>
+                <span>{timeAgo(post.created_utc)}</span>
             </div>
             <h2>{post.title}</h2>
             <div className='post'>

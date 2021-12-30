@@ -11,3 +11,23 @@ export function roundNumber(num){
         return `${k}.${decimal}k`
     }
 }
+
+export function timeAgo(epoch,comparedEpoch=Date.now()/1000){
+    const ago = comparedEpoch - epoch
+    let time
+    let suffix
+    //less than 5 minutes ago
+    if (ago<300) {
+        time = ''
+        suffix = 'just now'
+
+    } else if (ago < 3600 ) { //less than 60 minutes ago
+        time = Math.round(ago/60)
+        suffix = ' minutes ago'
+    } else { 
+        time = Math.round(ago/3600)
+        suffix = time > 1 ? ' hours ago' : ' hour ago'
+    }
+    
+    return time + suffix
+}
