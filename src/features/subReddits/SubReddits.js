@@ -1,5 +1,6 @@
 import SubReddit from "./SubReddit";
-import React, { useEffect } from "react";
+import React from "react";
+import { clearSearchTerm } from "../search/searchBarSlice";
 import { useSelector, useDispatch} from "react-redux";
 import { setActiveSub } from "./subRedditsSlice"
 import './subReddit.css'
@@ -8,7 +9,10 @@ export default function SubReddits(){
     const subs = useSelector(state => state.subReddits.subReddits)
     const dispatch = useDispatch()
 
-    const handleOnClick = (name) => dispatch(setActiveSub(name))
+    const handleOnClick = (name) => {
+        dispatch(setActiveSub(name))
+        dispatch(clearSearchTerm())
+    }
     return (
         <div className='subreddits'>
             <h2>Sub Reddits</h2>

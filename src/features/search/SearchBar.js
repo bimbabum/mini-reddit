@@ -10,8 +10,9 @@ export default function SearchBar(){
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        // dispatch(loadSearchResults(term))
-        // dispatch(setSearchTerm(term))
+        dispatch(loadSearchResults(term))
+        dispatch(setSearchTerm(term))
+        setTerm('')
     }
     return (
         // eslint-disable-next-line jsx-a11y/no-redundant-roles

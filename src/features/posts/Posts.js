@@ -13,16 +13,16 @@ export default function Posts(){
     },[dispatch, sub])
 
     if (isLoading) {
-        return (<>Loading...</>)
+        return (<div style={{textAlign: 'center'}}><img src='./img/loading.gif' alt='loading...' /></div>)
     }
 
     if (isError) {
-        return (<div role="alert">An unexpected error occurred. Please try again later.</div>)
+        return <div role="alert">An unexpected error occurred. Please try again later.</div>
     }
 
     return (
         <>
-            {posts.map(post => <Post post={post} key={post.ups}/>)}
+            {posts.map((post,index) => <Post post={post} key={index}/>)}
         </>
     )
 }

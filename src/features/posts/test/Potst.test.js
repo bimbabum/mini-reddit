@@ -6,7 +6,7 @@ import {server} from '../../../mocks/server'
 describe('while fetching data', ()=>{
     test('renders loading', ()=>{
         render(<Posts/>)
-        const loading = screen.getByText(/loading.../i)
+        const loading = screen.getByRole('img',{name: /loading.../i})
         expect(loading).toBeInTheDocument()
     })
 })
