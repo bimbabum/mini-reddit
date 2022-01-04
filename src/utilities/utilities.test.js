@@ -1,4 +1,4 @@
-import { capitalizeFirstLetter,roundNumber,timeAgo } from "./utilities";
+import { capitalizeFirstLetter,roundNumber,timeAgo, getDimension } from "./utilities";
 
 describe('capitalizeFirstLetter',()=>{
     test('party returns Party',()=>{

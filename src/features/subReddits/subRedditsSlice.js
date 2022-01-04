@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { loadPosts } from "../posts/PostsSlice";
 
 const subRedditsSlice = createSlice({
     name: 'subReddits',

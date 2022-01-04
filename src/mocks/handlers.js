@@ -60,7 +60,7 @@ export const handlers = [
         ))
     }),
 
-    rest.get(`https://www.reddit.com/search.json:q`,(req,res,ctx)=>{
+    rest.get(`https://www.reddit.com/search.json`, async(req,res,ctx)=>{
         return res(ctx.json({
             data: {
                 children: {
@@ -75,6 +75,5 @@ export const handlers = [
                 }
             }
         }))
-        
     })
 ]
