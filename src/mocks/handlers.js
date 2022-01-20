@@ -60,6 +60,19 @@ export const handlers = [
         ))
     }),
 
+    rest.get('https://www.reddit.com/r/testComments/.json', async(req,res,ctx)=>{
+        return res(ctx.json({
+            data: {children: {data: [
+                {},
+                {body: 'comment1'},
+                { body: 'comment2'},
+                { body: 'comment3'},
+                { body: 'comment4'},
+                { body: 'comment5'}
+            ]}}
+        }))
+    }),
+
     rest.get(`https://www.reddit.com/search.json`, async(req,res,ctx)=>{
         return res(ctx.json({
             data: {

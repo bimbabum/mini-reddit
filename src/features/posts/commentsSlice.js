@@ -6,7 +6,7 @@ export const loadCommentsByPost = createAsyncThunk(
         const response = await fetch(`https://www.reddit.com${link}.json`)
         const json = await response.json()
         const data = json[1].data.children.map(comments => comments.data)
-        const topComments = data.slice(1, 5)
+        const topComments = data.slice(1, 6)
         const commentsByPost = {
             link,
             topComments
@@ -18,22 +18,24 @@ export const loadCommentsByPost = createAsyncThunk(
 const commentsSlice = createSlice({
     name: 'comments',
     initialState: {
-        comments: {}
+        comments: {},
+        isLoading: false,
+        isError: false
     },
     extraReducers: {
-        // [loadCommentsByPost.loading]: (state,action) =>{
-        //     state.comments[action.payload.link].isLoading = true
-        //     state.comments[action.payload.link].isError = false
-        // },
+        [loadCommentsByPost.loading]: (state,action) =>{
+            state.isLoading = true
+            state.isError = false
+        },
         [loadCommentsByPost.fulfilled] : (state,action) =>{
             state.comments[action.payload.link] = action.payload.topComments
-            // state.comments[action.payload.link].isLoading = false
-            // state.comments[action.payload.link].isError = false
+            state.isLoading = false
+            state.isError = false
         },
-        // [loadCommentsByPost.rejected]: (state,action) =>{
-        //     state.comments[action.payload.link].isLoading = false
-        //     state.comments[action.payload.link].isError = true
-        // }
+        [loadCommentsByPost.rejected]: (state,action) =>{
+            state.isLoading = false
+            state.isError = true
+        }
     }
 })
 
