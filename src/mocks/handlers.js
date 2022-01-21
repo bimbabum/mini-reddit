@@ -12,7 +12,9 @@ export const handlers = [
                             ups: 10000,
                             num_comments: 99,
                             img: 'link here',
-                            link: 'link here',}
+                            link: 'link here',
+                            permalink: '/r/testComments/'
+                        }
                         
                     },
                     {
@@ -22,7 +24,9 @@ export const handlers = [
                             ups: 99000,
                             num_comments: 9987,
                             img: 'link here',
-                            link: 'link here',}
+                            link: 'link here',
+                            permalink: '/r/testComments/'
+                        }
                     },
                 ]}
             }
@@ -40,7 +44,8 @@ export const handlers = [
                             ups: 11302,
                             num_comments: 11302,
                             img: 'link here',
-                            link: 'link here'
+                            link: 'link here',
+                            permalink: '/r/testComments/'
                         }
 
                     },
@@ -52,6 +57,7 @@ export const handlers = [
                             num_comments: 112,
                             img: 'link here',
                             link: 'link here',
+                            permalink: '/r/testComments/'
                         }
                     },
                 ]
@@ -64,11 +70,11 @@ export const handlers = [
         return res(ctx.json({
             data: {children: {data: [
                 {},
-                {body: 'comment1'},
-                { body: 'comment2'},
-                { body: 'comment3'},
-                { body: 'comment4'},
-                { body: 'comment5'}
+                {body: 'comment 1'},
+                { body: 'comment 2'},
+                { body: 'comment 3'},
+                { body: 'comment 4'},
+                { body: 'comment 5'}
             ]}}
         }))
     }),
@@ -84,6 +90,7 @@ export const handlers = [
                         num_comments: 20,
                         img: 'link here',
                         link: 'link here',
+                        permalink: 'r/testComments/'
                     }
                 }
             }

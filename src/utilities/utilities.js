@@ -24,9 +24,12 @@ export function timeAgo(epoch,comparedEpoch=Date.now()/1000){
     } else if (ago < 3600 ) { //less than 60 minutes ago
         time = Math.round(ago/60)
         suffix = ' minutes ago'
-    } else { 
+    } else if (ago < 172800) { //less than 2 days ago 
         time = Math.round(ago/3600)
         suffix = time > 1 ? ' hours ago' : ' hour ago'
+    } else {
+        time=Math.round(ago/86400)
+        suffix = ' days ago'
     }
     
     return time + suffix

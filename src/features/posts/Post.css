@@ -76,3 +76,14 @@ h2{
     font-weight: bolder;
     color: rgb(78, 66, 68)
 }
+
+button {
+    border: 1px solid rgb(252, 224, 228);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.3rem;
+    background-color: rgb(250, 241, 242);
+}
+

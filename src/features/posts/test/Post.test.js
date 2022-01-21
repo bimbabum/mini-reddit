@@ -44,9 +44,9 @@ describe('comments', ()=>{
             num_comments: '20'
         }
         render(<Post post={post} />)
-        const commentButton = screen.getByRole('button', {name: `comments: ${post.num_comments}`})
+        const commentButton = screen.getByRole('button', {name: `comments: ${post.num_comments-1}`})
         userEvent.click(commentButton)
-        const loading = await screen.findByText('Loading...')
+        const loading = await screen.findByRole('img', {name: 'loading...'})
         expect(loading).toBeInTheDocument()
         jest.setTimeout(async() => {
             await waitForElementToBeRemoved(loading).then(async () => {

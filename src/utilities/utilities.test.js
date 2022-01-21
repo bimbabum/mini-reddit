@@ -64,4 +64,12 @@ describe('timeAgo',()=>{
         const expectedResult = '58 minutes ago'
         expect(result).toBe(expectedResult)
     })
+
+    test('190000 second before now returns `2 days ago`', ()=>{
+        const input = Date.now()/1000 - 182800
+        const result = timeAgo(input)
+
+        const expectedResult = '2 days ago'
+        expect(result).toBe(expectedResult)
+    })
 })
