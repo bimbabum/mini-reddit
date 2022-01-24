@@ -110,10 +110,12 @@ function VideoPost({url}) {
             setVertical(false)
         }
     }
+    console.log(url)
     return (
         <MediaContainer vertical={vertical}>
             <Video controls autoPlay muted onLoadedMetadata={(e) => handleOnLoad(e)} vertical={vertical}>
                 <source src={url} type='video/mp4' />
+                Video not supported
             </Video>
         </MediaContainer>
     )

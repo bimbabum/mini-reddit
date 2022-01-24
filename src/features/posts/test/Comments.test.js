@@ -17,9 +17,9 @@ describe('Comment', ()=>{
 })
 
 describe('Comments', ()=>{
-    test.skip('renders 3 comments', ()=>{
-        const comments = [{ body: 'comment1' }, { body: 'comment2' }, { body: 'comment3' }]
-        render(<Comments comments={comments}/>)
+    test('renders 3 comments', ()=>{
+        const comments = [{ body: 'comment1' }, { body: 'comment2' }, { body: 'comment3' },]
+        render(<Comments comments={comments} showComments={true}/>)
         expect(screen.getByText('comment1')).toBeInTheDocument()
         expect(screen.getByText('comment2')).toBeInTheDocument()
         expect(screen.getByText('comment3')).toBeInTheDocument()

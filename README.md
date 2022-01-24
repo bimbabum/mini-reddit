@@ -5,22 +5,22 @@ This app's intention is to create a simplified version of reddit by using [Reddi
 
 ## TECHONOLOGIES
 
-*This project is  bootstrapped with Create React App*
+*This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)*
 
 React, Redux
-Styling: basic CSS
-React testing library, Jest, msw (async mocking) for Testing
+Styled Components: for styling and theme mode (dark and light mode)
+React testing library, Jest, MSW (async mocking): for unit and intergration testing
 
 ## FEATURES
 
-User can review posts by choosing a subreddit, search posts and access to orginal post.
+User can:
+- Review posts by choosing a subreddit, search posts and access to orginal post.
+- View comments 
+- Chooose between dark and light mode
 
 -----------------------
 
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# GETTING STARTED
 
 ## Available Scripts
 

@@ -34,9 +34,9 @@ test('displays selfText', ()=>{
     expect(selfText).toBeInTheDocument()
 })
 
-test.skip('displays video', ()=>{
+test('displays video', ()=>{
     render(<Media post={post.videoPost}/>)
-    const video = screen.getByRole('video')
+    const video = screen.getByText('Video not supported')
     expect(video).toBeInTheDocument()
 })
 

@@ -1,6 +1,7 @@
 import {rest} from 'msw'
 
 export const handlers = [
+    //POSTS - POPULAR SUBREDDIT ON INIT
     rest.get(`https://www.reddit.com/r/popular.json`, (req,res,ctx)=>{
         return res(ctx.json({
             data: {
@@ -32,7 +33,7 @@ export const handlers = [
             }
         ))
     }),
-
+    //POSTS - ASKREDDIT SUBREDDIT
     rest.get(`https://www.reddit.com/r/askreddit.json`, (req,res,ctx)=>{
         return res(ctx.json({
             data: {
@@ -65,7 +66,7 @@ export const handlers = [
         }
         ))
     }),
-
+    //COMMENTS
     rest.get('https://www.reddit.com/r/testComments/.json', async(req,res,ctx)=>{
         return res(ctx.json({
             data: {children: {data: [
@@ -78,22 +79,30 @@ export const handlers = [
             ]}}
         }))
     }),
-
+    //SEARCH???
     rest.get(`https://www.reddit.com/search.json`, async(req,res,ctx)=>{
-        return res(ctx.json({
-            data: {
-                children: {
-                    data: {
-                        title: "Best customer to date! She let me pick out whatever halloween candy I wanted …",
-                        author: 'kateeee182',
-                        ups: 78,
-                        num_comments: 20,
-                        img: 'link here',
-                        link: 'link here',
-                        permalink: 'r/testComments/'
-                    }
-                }
-            }
-        }))
+        const search = req.url.searchParams.get('q')
+        return res(ctx.json(
+            searchResult[search]
+        ))
     })
 ]
+
+//data to return to on searching
+const searchResult = {
+    'best halloween custom': {
+        data: {
+            children: [{
+                data: {
+                    title: "Best customer to date! She let me pick out whatever halloween candy I wanted …",
+                    author: 'kateeee182',
+                    ups: 78,
+                    num_comments: 20,
+                    img: 'link here',
+                    link: 'link here',
+                    permalink: 'r/testComments/'
+                }
+            }]
+        }
+    }
+}

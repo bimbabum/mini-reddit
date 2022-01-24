@@ -23,3 +23,9 @@ function App() {
 }
 
 export default App;
+
+// TODO:
+// 1. Dark & light theme
+// 1a. Routing
+// 2. Search bar to adjust to screen size
+// 3. Add Popular/Hot/Top/New 

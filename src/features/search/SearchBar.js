@@ -10,6 +10,7 @@ export default function SearchBar(){
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        if(!term) return
         dispatch(loadSearchResults(term))
         dispatch(setSearchTerm(term))
         setTerm('')
