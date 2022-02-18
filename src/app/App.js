@@ -2,11 +2,17 @@ import './App.css';
 import Header from '../components/Header';
 import Main from '../components/Main';
 import Sidebar from '../components/Sidebar';
-
+import GlobalStyles from '../theme/globalStyles';
+import {ThemeProvider} from 'styled-components'
+import {lightTheme,darkTheme} from '../theme/theme'
+import {useSelector} from 'react-redux'
 
 function App() {
+  const mode = useSelector(state => state.mode)
+  const theme = mode === 'light'? lightTheme: darkTheme
   return (
-    <>
+    <ThemeProvider theme={theme}>
+        <GlobalStyles/>
         <header>
             <Header/>
         </header>
@@ -18,7 +24,7 @@ function App() {
               <Sidebar/>
             </aside>
       </div>
-    </>
+    </ThemeProvider>
   );
 }
 

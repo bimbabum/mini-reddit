@@ -1,5 +1,6 @@
 import SearchBar from "../features/search/SearchBar"
 import './header.css'
+import ModeToggler from "../features/modeToggler/ModeToggler"
 
 export default function Header(){
     return (
@@ -9,6 +10,7 @@ export default function Header(){
             <span className='mini-reddit'>mini reddit</span>
           </div>
           <SearchBar/>
+          <ModeToggler/>
         </>
     )
 }
