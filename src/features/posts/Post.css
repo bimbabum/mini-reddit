@@ -1,4 +1,4 @@
-.postContainer {
+/* .postContainer {
     border: 1px solid rgb(252, 224, 228);
     padding: 0px 5px 10px 5px;
     margin: 10px auto;
@@ -17,65 +17,48 @@
     font-size: 0.75rem; 
     color:rgb(44, 38, 39);
     padding-right: 0.5rem
-}
+} */
 
-.post {
+/* .post {
     padding: 0.25rem 0.5rem;
-}
-/* .media {
-    text-align: center;
-    max-height: 500px;
-    overflow: hidden;
 } */
 
-/* .media img {
-    width: 100%;
-    height: auto;
-} */
-
-h2{
+/* h2{
     font-size: 1.5rem;
     line-height: 2rem;
     padding: 0.5rem 0.5rem;
-}
-
-/* .postSelfText {
-    max-height: 250px;   
-    overflow: hidden;
-    mask-image: linear-gradient(180deg,#000 60%,transparent);
-    text-align: left;
 } */
 
-.postVideo {
+/* .postVideo {
     width: 100%;
     height: auto
-}
-
+} */
+/* 
 .post-footer{
     display:flex;
     align-content: center;
     padding: 0 0.5rem;
     padding-top: 0.5rem;
-}
-
+} */
+/* 
 .post-footer span {
     padding-right: 1rem;
-}
-
+} */
+/* 
 .post-footer img{
     width: 1.5rem;
     padding: 0.25rem
-}
+} */
 
-.postContainer a {
+/* .postContainer a {
     color: black;
     text-decoration: none;
-}
-
+} */
+/* 
 .postContainer a:hover{
     font-weight: bolder;
     color: rgb(78, 66, 68)
-}
+} */
 
 button {
     border: 1px solid rgb(252, 224, 228);

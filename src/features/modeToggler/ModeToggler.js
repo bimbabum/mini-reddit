@@ -3,7 +3,7 @@ import { useDispatch, useSelector} from "react-redux"
 import {toggleMode} from './modeSlice'
 
 const Toggler = styled.button`
-    background-color: white;
+    background-color: ${({theme})=> theme.backgroundColor};
     border: none;
     margin-right: 1rem;
     height: 100%;
@@ -26,7 +26,7 @@ export default function ModeToggler(){
         <Toggler>
             <ImageContainer
                 alt='mode toggler' 
-                src={mode === 'light'? theme.light:theme.dark} 
+                src={mode === 'light'? theme.dark:theme.light} 
                 onClick={() => dispatch(toggleMode())}/>
         </Toggler>
     )

@@ -1,5 +1,22 @@
 import { useSelector } from "react-redux"
-import './mainHeader.css'
+import styled from 'styled-components'
+
+const Container = styled.div`
+    background-color: ${({theme})=> theme.backgroundColor};
+    color: ${({theme}) => theme.text};
+    border: 1px solid ${({theme})=>theme.boxShadow};
+    box-shadow: 0.15rem 0.15rem ${({theme})=>theme.boxShadow};
+    border-radius: 0.5rem;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+    text-align: ${props => props.searchResult? 'left' : 'center'};
+`
+const Span = styled.span`
+    font-weight: 800;
+`
+const Content = styled.h3`
+    font-size: 1.5rem;
+`
 
 export default function MainHeader(){
     const activeSubReddit = useSelector(state => state.subReddits.activeSubReddit.name)
@@ -7,15 +24,15 @@ export default function MainHeader(){
 
     if(searchTerm) {
         return (
-            <div className='mainHeader searchResult'>
-                <span>Search results for: <span className='searchTerm'>"{searchTerm}"</span></span>
-            </div>
+            <Container searchResult>
+                <span>Search results for: <Span>"{searchTerm}"</Span></span>
+            </Container>
         )
     }
 
     return (
-        <div className='mainHeader subreddit'>
-            <h3>r/{activeSubReddit}</h3>
-        </div>
+        <Container>
+            <Content>r/{activeSubReddit}</Content>
+        </Container>
     )
 }

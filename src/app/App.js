@@ -1,4 +1,4 @@
-import './App.css';
+import { MainAndAside } from '../theme/styling';
 import Header from '../components/Header';
 import Main from '../components/Main';
 import Sidebar from '../components/Sidebar';
@@ -8,24 +8,18 @@ import {lightTheme,darkTheme} from '../theme/theme'
 import {useSelector} from 'react-redux'
 
 function App() {
-  const mode = useSelector(state => state.mode)
-  const theme = mode === 'light'? lightTheme: darkTheme
-  return (
-    <ThemeProvider theme={theme}>
-        <GlobalStyles/>
-        <header>
+    const mode = useSelector(state => state.mode)
+    const theme = mode === 'light'? lightTheme: darkTheme
+    return (
+        <ThemeProvider theme={theme}>
+            <GlobalStyles/>
             <Header/>
-        </header>
-        <div className='main-and-aside'>
-            <main>
-              <Main/>
-            </main>
-            <aside>
-              <Sidebar/>
-            </aside>
-      </div>
-    </ThemeProvider>
-  );
+            <MainAndAside>
+                <Main/>
+                <Sidebar/>
+            </MainAndAside>
+        </ThemeProvider>
+    );
 }
 
 export default App;
