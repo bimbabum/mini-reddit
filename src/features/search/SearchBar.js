@@ -1,4 +1,3 @@
-// import './searchBar.css'
 import styled from 'styled-components'
 import { breakpoints } from '../../theme/styling'
 import React from 'react'

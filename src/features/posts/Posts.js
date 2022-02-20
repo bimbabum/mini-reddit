@@ -13,7 +13,11 @@ export default function Posts(){
     },[dispatch, sub])
 
     if (isLoading) {
-        return (<div style={{textAlign: 'center'}}><img src='./img/loading.gif' alt='loading...' /></div>)
+        return (
+            <div style={{textAlign: 'center'}}>
+                <img src='./img/loading.gif' alt='loading...' />
+            </div>
+        )
     }
 
     if (isError) {

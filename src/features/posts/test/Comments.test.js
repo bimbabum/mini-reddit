@@ -3,12 +3,12 @@ import {render, screen, fireEvent} from '../../../test-utils/testing-library-uti
 
 describe('Comment', ()=>{
     test('renders comment text', () => {
-        render(<Comment comment={{body: 'this is a comment'}} />)
+        render(<Comment comment={{body: 'this is a comment'}} showComment={true}/>)
         const comment = screen.getByText('this is a comment')
         expect(comment).toBeInTheDocument()
     })
     test('renders replies when click the + button', async()=>{
-        render(<Comment comment={{ body: 'this is a comment', replies: { data: { children: [{ data: { body: 'reply 1' } }, { data: { body: 'reply 2' } }]}}}}/>)
+        render(<Comment comment={{ body: 'this is a comment', replies: { data: { children: [{ data: { body: 'reply 1' } }, { data: { body: 'reply 2' } }]}}}} showComment={true}/>)
         const button = screen.getByRole('button', {name: '+'})
         fireEvent.click(button)
         expect(await screen.findByText('reply 1')).toBeInTheDocument()

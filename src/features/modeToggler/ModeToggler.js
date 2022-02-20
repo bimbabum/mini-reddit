@@ -8,6 +8,7 @@ const Toggler = styled.button`
     margin-right: 1rem;
     height: 100%;
     display: flex;
+    align-items: center;
 `
 
 const ImageContainer = styled.img`

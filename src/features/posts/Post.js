@@ -1,4 +1,3 @@
-import  './Post.css'
 import styled from 'styled-components'
 import {useState} from 'react'
 import Media from './Media'
@@ -6,6 +5,7 @@ import { roundNumber, timeAgo } from '../../utilities/utilities'
 import Comments from './Comments'
 import { useSelector,useDispatch} from 'react-redux'
 import { loadCommentsByPost } from './commentsSlice'
+import { H2, Container } from '../../theme/styling'
 
 const Button = styled.button`
     border: 1px solid rgb(252, 224, 228);
@@ -17,15 +17,6 @@ const Button = styled.button`
     background-color: ${props => props.showComments ? 'rgb(252, 224, 228)' : 'rgb(250, 241, 242)'};
     margin-right: 0.5rem;
 `
-const Container = styled.div`
-    background-color: ${({theme})=> theme.backgroundColor};
-    border: 1px solid ${({theme})=>theme.boxShadow};
-    padding: 0px 5px 10px 5px;
-    margin: 10px auto;
-    margin-top: 0;
-    border-radius: 0.25rem;
-    box-shadow: 0.15rem 0.15rem ${({theme})=>theme.boxShadow};
-`
 const HeaderContainer = styled.div`
     padding-left: 0.5rem;
     padding-top: 0.5rem;
@@ -36,7 +27,6 @@ const Header = styled.span`
     padding-right: 0.5rem;
     font-weight: ${props => props.bold? 'bold' : 'normal'};
 `
-
 const PostTitle = styled.a`
     color: ${({theme})=> theme.text};
     text-decoration: none;
@@ -58,11 +48,7 @@ const Image = styled.img`
 const Span = styled.span`
     padding-right: 1rem;
 `
-const H2 = styled.h2`
-    font-size: 1.5rem;
-    line-height: 2rem;
-    padding: 0.5rem 0.5rem;
-`
+
 
 export default function Post({post}){
     const [showComments, setShowComments] = useState(false)

@@ -10,6 +10,7 @@ import {useSelector} from 'react-redux'
 function App() {
     const mode = useSelector(state => state.mode)
     const theme = mode === 'light'? lightTheme: darkTheme
+    
     return (
         <ThemeProvider theme={theme}>
             <GlobalStyles/>
@@ -28,4 +29,6 @@ export default App;
 // 1. Dark & light theme
 // 1a. Routing
 // 2. Search bar to adjust to screen size
-// 3. Add Popular/Hot/Top/New 
+// 3. Menu for smaller screen
+// 4. Add Popular/Hot/Top/New 
+

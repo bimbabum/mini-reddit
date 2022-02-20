@@ -4,20 +4,8 @@ import { clearSearchTerm } from "../search/searchBarSlice";
 import { useSelector, useDispatch} from "react-redux";
 import { setActiveSub } from "./subRedditsSlice"
 import styled from "styled-components";
+import { H2, Container } from "../../theme/styling";
 
-const H2 = styled.h2`
-    text-align: center;
-    line-height: 2rem;
-    padding-top: 1rem;
-    color: ${({theme})=> theme.text};
-    font-size: 1.5rem;
-`
-const Container = styled.div`
-    border: 1px solid ${({theme})=>theme.boxShadow};
-    border-radius: 0.5rem;
-    padding-bottom: 1rem;
-    background-color: ${({theme})=> theme.backgroundColor}
-`
 const UL = styled.ul`
     list-style-type: none;
     padding-left: 2rem;
@@ -34,7 +22,7 @@ export default function SubReddits(){
     }
     return (
         <Container className='subreddits'>
-            <H2>Sub Reddits</H2>
+            <H2 center>Sub Reddits</H2>
             <UL>
                 {subs.map(sub => (
                     <li key={sub.id}>

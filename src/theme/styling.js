@@ -34,3 +34,38 @@ export const Aside = styled.div`
         display: none;
     }
 `
+
+export const H2 = styled.h2`
+    color: ${({theme})=> theme.text};
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    line-height: 2rem;
+    text-align: ${props => {
+        if(props.center) {
+            return 'center'
+        } else if (props.right) {
+            return 'right'
+        } else {
+            return 'left'
+        }
+    }}
+`
+
+export const Container = styled.div`
+    color: ${({theme}) => theme.text};
+    background-color: ${({theme}) => theme.backgroundColor};
+    border: 1px solid ${({theme}) => theme.boxShadow};
+    border-radius: 0.5rem;
+    box-shadow: 0.15rem 0.15rem ${({theme})=>theme.boxShadow};
+    padding: 1rem;
+    margin: 0.5rem auto;
+    text-align: ${props => {
+        if(props.center) {
+            return 'center'
+        } else if (props.right) {
+            return 'right'
+        } else {
+            return 'left'
+        }
+    }}
+`
