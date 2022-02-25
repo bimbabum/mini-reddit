@@ -1,12 +1,15 @@
 import {render} from '@testing-library/react'
 import { Provider } from 'react-redux'
 import store from '../app/store'
+import {BrowserRouter} from 'react-router-dom'
 
 function AllProviders({ children }) {
     return (
-        <Provider store={store}>
-            {children}
-        </Provider>
+        <BrowserRouter>
+            <Provider store={store}>
+                {children}
+            </Provider>
+        </BrowserRouter>
     )
 }
 
