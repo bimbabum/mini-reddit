@@ -10,6 +10,7 @@ export default function MainHeader(){
     const activeSubReddit = useSelector(state => state.subReddits.activeSubReddit.name)
     const searchTerm = useSelector(state => state.searchTerm)
 
+
     if(searchTerm) {
         return (
             <Container searchResult>

@@ -1,5 +1,5 @@
 import SubReddit from "../subReddit";
-import {screen,render} from '@testing-library/react'
+import {screen,render} from '../../../test-utils/testing-library-utils'
 
 describe('render',()=>{
     test('renders subreddit through props',()=>{

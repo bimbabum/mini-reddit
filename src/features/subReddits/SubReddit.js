@@ -1,7 +1,8 @@
 import { capitalizeFirstLetter } from "../../utilities/utilities"
 import styled from "styled-components"
+import {Link} from 'react-router-dom'
 
-const Sub = styled.a`
+const Sub = styled(Link)`
     text-decoration: none;
     font-weight:600;
     color: ${({theme})=>theme.text};
@@ -13,11 +14,12 @@ const Sub = styled.a`
 export default function SubReddit({id, name, handleOnClick}){ 
     return (
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
-        <Sub 
-            href='#' 
+        <Sub
+            // href='#' 
             onClick={()=> handleOnClick(name)}
+            to={`/${name}`}
         >
-            {capitalizeFirstLetter(name)}
+                {capitalizeFirstLetter(name)}
         </Sub>
     )
 }

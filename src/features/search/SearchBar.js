@@ -4,7 +4,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { setSearchTerm } from './searchBarSlice'
 import { loadSearchResults } from '../posts/PostsSlice'
-
+import {useNavigate} from 'react-router-dom'
 
 const Form = styled.form`
     display: flex;
@@ -39,10 +39,13 @@ const Input = styled.input`
 export default function SearchBar(){
     const [term, setTerm] = React.useState('')
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const handleSubmit = (e) => {
         e.preventDefault()
         if(!term) return
+        const urlEncoded = new URLSearchParams({search: term})
+        navigate({pathname: '/', search:`?${urlEncoded}`})
         dispatch(loadSearchResults(term))
         dispatch(setSearchTerm(term))
         setTerm('')
