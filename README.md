@@ -7,9 +7,11 @@ This app's intention is to create a simplified version of reddit by using [Reddi
 
 *This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)*
 
-React, Redux
-Styled Components: for styling and theme mode (dark and light mode)
-React testing library, Jest, MSW (async mocking): for unit and intergration testing
+- React, Redux.
+
+- Styled Components: for styling and theme mode (dark and light mode).
+
+- React testing library, Jest, MSW (async mocking): for unit and intergration testing.
 
 ## FEATURES
 
