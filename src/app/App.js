@@ -7,6 +7,7 @@ import Main from '../components/Main';
 import Sidebar from '../components/Sidebar';
 import {setActiveSub} from '../features/subReddits/subRedditsSlice'
 import {setSearchTerm, clearSearchTerm} from '../features/search/searchBarSlice'
+import { loadSearchResults } from '../features/posts/PostsSlice';
 import {useSelector, useDispatch} from 'react-redux'
 import {useEffect} from 'react'
 import {useLocation} from 'react-router-dom'
@@ -14,19 +15,24 @@ import {useLocation} from 'react-router-dom'
 function App() {
     const mode = useSelector(state => state.mode)
     const theme = mode === 'light'? lightTheme: darkTheme
+
     const dispatch = useDispatch()
     const location = useLocation()
     useEffect(()=>{
         const path = location.pathname.slice(1)
-        const searchParams = new URL(window.location).searchParams
-        const searchTerm = searchParams.get('search')
+        const searchParams = location.search
+        const searchTerm = new URLSearchParams(searchParams).get('search')
         if(path) {
             dispatch(setActiveSub(path))
             dispatch(clearSearchTerm())
         } else if (searchTerm) {
-            dispatch(setSearchTerm(searchTerm)) 
+            dispatch(setSearchTerm(searchTerm))
+            dispatch(loadSearchResults(searchTerm)) 
+        } else {
+            dispatch(setActiveSub("Popular"))
+            dispatch(clearSearchTerm())
         }
-    })
+    },[dispatch, location.pathname, location.search])
 
     return (
         <ThemeProvider theme={theme}>
