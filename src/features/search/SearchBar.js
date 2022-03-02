@@ -26,13 +26,14 @@ const Input = styled.input`
     padding: 9px 25px 9px 40px;
     border: solid 1px ${({theme})=> theme.bodyBackgroundColor};
     background-color: ${({theme})=> theme.bodyBackgroundColor};
+    color: ${({theme})=>theme.text};
     outline: none;
     width: 100%;
     ::placeholder {
         color: ${({theme})=> theme.text}
     }
     :focus {
-        border: solid 1px black;
+        border: solid 2px ${({theme})=> theme.text};
     }
 `
 
