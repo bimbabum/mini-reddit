@@ -9,6 +9,9 @@ const Sub = styled(Link)`
     :hover {
         color: gray;
     }
+    :focus {
+        color: gray;
+    }
 `
 
 export default function SubReddit({id, name, handleOnClick}){ 

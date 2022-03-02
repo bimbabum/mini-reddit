@@ -29,8 +29,8 @@ function App() {
             dispatch(setSearchTerm(searchTerm))
             dispatch(loadSearchResults(searchTerm)) 
         } else {
-            dispatch(setActiveSub("Popular"))
             dispatch(clearSearchTerm())
+            dispatch(setActiveSub('Popular'))
         }
     },[dispatch, location.pathname, location.search])
 
