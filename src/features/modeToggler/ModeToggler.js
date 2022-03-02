@@ -9,6 +9,7 @@ const Toggler = styled.button`
     height: 100%;
     display: flex;
     align-items: center;
+    cursor: pointer;
 `
 
 const ImageContainer = styled.img`

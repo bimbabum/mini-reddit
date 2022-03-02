@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import SearchBar from "../features/search/SearchBar"
+import Menu from '../features/menu/Menu'
 import ModeToggler from "../features/modeToggler/ModeToggler"
 import { breakpoints, Header as Container } from "../theme/styling"
 import {useNavigate} from 'react-router-dom'
@@ -33,6 +34,7 @@ export default function Header(){
           </LogoContainer>
           <SearchBar/>
           <ModeToggler/>
+          <Menu/>
         </Container>
     )
 }
