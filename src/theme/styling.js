@@ -52,6 +52,7 @@ export const H2 = styled.h2`
 `
 
 export const Container = styled.div`
+    display: ${props => props.disable? 'none':'block'}
     color: ${({theme}) => theme.text};
     background-color: ${({theme}) => theme.backgroundColor};
     border: 1px solid ${({theme}) => theme.boxShadow};
