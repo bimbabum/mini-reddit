@@ -20,6 +20,7 @@ function datatrimming(raw) {
             url: post.url,
             thumbnail: post.thumbnail,
             permalink: post.permalink
+
     }))
     return trimmeddata
 }
