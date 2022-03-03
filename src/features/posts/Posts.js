@@ -1,6 +1,6 @@
+import React, { useEffect } from 'react'
 import Post from './Post'
 import { useSelector,useDispatch } from 'react-redux'
-import React, { useEffect } from 'react'
 import { loadPosts } from './PostsSlice'
 
 export default function Posts(){

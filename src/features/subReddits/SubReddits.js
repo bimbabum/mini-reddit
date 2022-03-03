@@ -1,8 +1,7 @@
 import SubReddit from "./SubReddit";
 import React from "react";
-import { clearSearchTerm } from "../search/searchBarSlice";
 import { useSelector, useDispatch} from "react-redux";
-import { setActiveSub } from "./subRedditsSlice"
+import { setActiveSubThunk } from "./subRedditsSlice"
 import styled from "styled-components";
 import { H2, Container } from "../../theme/styling";
 
@@ -17,9 +16,9 @@ export default function SubReddits(){
     const dispatch = useDispatch()
 
     const handleOnClick = (name) => {
-        dispatch(setActiveSub(name))
-        dispatch(clearSearchTerm())
+        dispatch(setActiveSubThunk(name))
     }
+
     return (
         <Container className='subreddits'>
             <H2 center>Sub Reddits</H2>

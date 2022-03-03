@@ -6,7 +6,3 @@ test('renders selected subreddit info', ()=>{
     const popularSub = screen.getByRole('heading',{name: "r/Popular"})
     expect(popularSub).toBeInTheDocument()
 })
-
-test('renders search result', ()=>{
-
-})

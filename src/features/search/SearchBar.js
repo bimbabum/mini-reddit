@@ -2,8 +2,7 @@ import styled from 'styled-components'
 import { breakpoints } from '../../theme/styling'
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { setSearchTerm } from './searchBarSlice'
-import { loadSearchResults } from '../posts/PostsSlice'
+import { setSearchTermThunk } from './searchBarSlice'
 import {useNavigate} from 'react-router-dom'
 
 const Form = styled.form`
@@ -46,9 +45,9 @@ export default function SearchBar(){
         e.preventDefault()
         if(!term) return
         const urlEncoded = new URLSearchParams({search: term})
+        //Escape current route if any
         navigate({pathname: '/', search:`?${urlEncoded}`})
-        dispatch(loadSearchResults(term))
-        dispatch(setSearchTerm(term))
+        dispatch(setSearchTermThunk(term))
         setTerm('')
     }
     return (

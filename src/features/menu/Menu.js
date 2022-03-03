@@ -1,9 +1,8 @@
 import SubReddit from "../subReddits/SubReddit"
 import styled from "styled-components"
 import { useState } from "react"
-import { useSelector,useDispatch } from "react-redux"
-import { setActiveSub } from '../subReddits/subRedditsSlice'
-import { clearSearchTerm } from "../search/searchBarSlice";
+import { useSelector, useDispatch } from "react-redux"
+import { setActiveSubThunk } from '../subReddits/subRedditsSlice'
 
 const Container = styled.div`
     display: flex;
@@ -12,7 +11,6 @@ const Container = styled.div`
     @media (min-width: 675px) {
         display: none
     }
-    
 `
 const Button = styled.button`
     color: ${({theme}) => theme.text};
@@ -25,7 +23,6 @@ const Button = styled.button`
         box-shadow: 0.15rem 0.15rem ${({theme})=>theme.boxShadow};
     }
 `
-
 const MenuContainer = styled.div`
     display: ${props => props.disable? 'none':'block'};
     position: absolute;
@@ -34,6 +31,7 @@ const MenuContainer = styled.div`
     right: 1rem;
     background-color: ${({theme}) => theme.backgroundColor};
     width: 200px;
+    border: 1px solid grey;
 `
 const UL = styled.ul`
     list-style-type: none;
@@ -48,19 +46,18 @@ export default function Menu(){
         setDisable(disable => !disable)
     }
 
-    const handleSelect = (name) => {
-        dispatch(setActiveSub(name))
-        dispatch(clearSearchTerm())
+    const handleOnSelect = (name) => {
+        dispatch(setActiveSubThunk(name))
         setDisable('true')
     }
 
     return (
         <Container>
             <Button onClick={handleOnClick}>
-                SUB
+                SUBs
             </Button>
             <MenuContainer disable={disable}>
-                <MenuContent handleSelect={handleSelect}/>
+                <MenuContent handleSelect={handleOnSelect}/>
             </MenuContainer>
         </Container>
     ) 
@@ -68,7 +65,6 @@ export default function Menu(){
 
 function MenuContent({handleSelect}){
     const subs = useSelector(state=>state.subReddits.subReddits)
-
     return(
         <UL>
             {subs.map(sub => (

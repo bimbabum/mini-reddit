@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import {clearSearchTerm} from '../search/searchBarSlice'
 
 const subRedditsSlice = createSlice({
     name: 'subReddits',
@@ -35,6 +36,15 @@ const subRedditsSlice = createSlice({
 })
 
 export const {setActiveSub} = subRedditsSlice.actions
+
+export const setActiveSubThunk = (sub) => {
+    return (dispatch) => {
+        dispatch(setActiveSub(sub))
+        dispatch(clearSearchTerm())
+    }
+}
+
+
 export default subRedditsSlice.reducer
 
 export const selectSubReddits = (state) => state.subReddits.subReddits
