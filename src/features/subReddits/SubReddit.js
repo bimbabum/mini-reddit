@@ -18,7 +18,6 @@ export default function SubReddit({id, name, handleOnClick}){
     return (
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
         <Sub
-            // href='#' 
             onClick={()=> handleOnClick(name)}
             to={`/${name}`}
         >

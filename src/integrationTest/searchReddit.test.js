@@ -21,7 +21,7 @@ test('search result for `best halloween custom`', async()=>{
 
 test('not render search result if input is empty',async()=>{
     render(<App />)
-    const defaultTitle = await screen.findByRole('heading', { name: /ham sniffer/i })
+    const defaultTitle = await screen.findByRole('heading', { name: /ham sniffer/i})
     expect(defaultTitle).toBeInTheDocument()
 
     const searchBar = screen.getByRole('textbox')

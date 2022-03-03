@@ -5,8 +5,8 @@ import {ThemeProvider} from 'styled-components'
 import Header from '../components/Header';
 import Main from '../components/Main';
 import Sidebar from '../components/Sidebar';
-import {setActiveSub} from '../features/subReddits/subRedditsSlice'
-import {setSearchTerm, clearSearchTerm} from '../features/search/searchBarSlice'
+import {setActiveSubThunk} from '../features/subReddits/subRedditsSlice'
+import {setSearchTerm} from '../features/search/searchBarSlice'
 import { loadSearchResults } from '../features/posts/PostsSlice';
 import {useSelector, useDispatch} from 'react-redux'
 import {useEffect} from 'react'
@@ -16,6 +16,7 @@ function App() {
     const mode = useSelector(state => state.mode)
     const theme = mode === 'light'? lightTheme: darkTheme
 
+    //Routing
     const dispatch = useDispatch()
     const location = useLocation()
     useEffect(()=>{
@@ -23,14 +24,14 @@ function App() {
         const searchParams = location.search
         const searchTerm = new URLSearchParams(searchParams).get('search')
         if(path) {
-            dispatch(setActiveSub(path))
-            dispatch(clearSearchTerm())
+            dispatch(setActiveSubThunk(path))
+            // dispatch(clearSearchTerm())
         } else if (searchTerm) {
             dispatch(setSearchTerm(searchTerm))
             dispatch(loadSearchResults(searchTerm)) 
         } else {
-            dispatch(clearSearchTerm())
-            dispatch(setActiveSub('Popular'))
+            // dispatch(clearSearchTerm())
+            dispatch(setActiveSubThunk('Popular'))  
         }
     },[dispatch, location.pathname, location.search])
 
@@ -47,11 +48,3 @@ function App() {
 }
 
 export default App;
-
-// TODO:
-// 1. Dark & light theme
-// 1a. Routing
-// 2. Search bar to adjust to screen size
-// 3. Menu for smaller screen
-// 4. Add Popular/Hot/Top/New 
-

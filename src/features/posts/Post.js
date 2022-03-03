@@ -1,11 +1,12 @@
-import styled from 'styled-components'
-import {useState} from 'react'
 import Media from './Media'
-import { roundNumber, timeAgo } from '../../utilities/utilities'
 import Comments from './Comments'
+import styled from 'styled-components'
+import { H2, Container } from '../../theme/styling'
+import {useState} from 'react'
+import { roundNumber, timeAgo } from '../../utilities/utilities'
 import { useSelector,useDispatch} from 'react-redux'
 import { loadCommentsByPost } from './commentsSlice'
-import { H2, Container } from '../../theme/styling'
+
 
 const Button = styled.button`
     border: 1px solid rgb(252, 224, 228);
@@ -71,8 +72,6 @@ export default function Post({post}){
                 <H2>{post.title}</H2>
             </PostTitle>
             <Media post={post}/>
-                {/* {post.post_hint? <p style={{color: 'red'}}>Post hint: {post.post_hint}</p> : null}
-                {post.media_metadata? <p>Media metadata</p>: null} */}
             <Footer>
                 <Button>
                     <Image src='./img/up_icon.png' alt='votes'/>

@@ -1,4 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit'
+import { loadSearchResults } from '../posts/PostsSlice'
 
 const searchBarSlice = createSlice({
     name: 'searchTerm',
@@ -15,4 +16,11 @@ const searchBarSlice = createSlice({
 
 export default searchBarSlice.reducer
 export const { setSearchTerm, clearSearchTerm} = searchBarSlice.actions
+
+export const setSearchTermThunk = (term) => {
+    return (dispatch) => {
+        dispatch(setSearchTerm(term))
+        dispatch(loadSearchResults(term))
+    }
+}
 
